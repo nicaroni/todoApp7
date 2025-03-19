@@ -3,7 +3,7 @@
 import React, { useReducer, useEffect, Suspense, useState  } from "react";
 import todoReducer, { initialState } from "../context/TodoReducer";
 import axios from "axios";
-import '../assets/styles/todoMain.scss';
+
 import NavBar from '../components/NavbarPart';
 import confetti from "canvas-confetti";
 import API_URL from '../config';
@@ -85,7 +85,7 @@ const TodoPage = () => {
   return (
 
   
-      <div className="todos-page">
+      <div className="todos-page w-screen h-screen flex justify-between items-start gap-5 px-[10px] bg-white">
    <div className="calendar">
    
     <Calendar  />

@@ -6,7 +6,7 @@ import LoginPage from './containers/LoginPage.jsx';
 import TodoPage from './containers/TodoPage.jsx';
 import ThemePage from './containers/ThemePage.jsx';
 import HomePage from './containers/HomePage.jsx';
-import './assets/styles/todoMain.scss';
+
 import './App.css'
 
 function App() {

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import API_URL from '../config';
-import '../assets/styles/todoMain.scss';
+
 
 
 const PomodoroTimer = ({ theme, isRunning, setIsRunning, todoId, refreshTodos }) => {
