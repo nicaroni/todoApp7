@@ -94,7 +94,7 @@ const TodoPage = () => {
         <div className={`container todo-table ${theme}`}>
          
           <NavBar />
-          <h1 className={`my-4 ${theme}`}>Todo App</h1>
+          <h1 className={`my-4 text-primary font-bold ${theme}`}>Todo App</h1>
           
           <Suspense fallback={<div>Loading List...</div>}>
             {todos && todos.completedTodos && todos.uncompletedTodos ? (

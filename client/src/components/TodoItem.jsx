@@ -122,7 +122,7 @@ const TodoItem = ({ todo, dispatch, startPomodoro }) => {
   
 
   return (
-    <tr className={`todo-item-row ${isCompleted ? "completed" : ""}`}>
+    <tr className={`todo-item-row flex flex-row items-center justify-around content-center gap-[15px] py-[5px] border-b border-gray-200 last:border-b-0 ${isCompleted ? "completed" : ""}`}>
       <td className="circle" onClick={handleComplete}  onMouseEnter={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
           setHoveredEvent(true);
