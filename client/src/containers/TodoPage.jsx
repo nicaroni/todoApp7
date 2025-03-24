@@ -86,15 +86,16 @@ const TodoPage = () => {
 
   
       <div className="todos-page w-screen h-screen flex justify-between items-start gap-5 px-[10px] bg-white">
-   <div className="calendar">
+   <div className="calendar w-[250px] flex-shrink-0">
    
     <Calendar  />
         </div>
   
-        <div className={`container todo-table ${theme}`}>
+         
+        <div className={`container todo-table w-[900px] h-[700px] ${theme} `}>
          
           <NavBar />
-          <h1 className={`my-4 text-primary font-bold ${theme}`}>Todo App</h1>
+          <h1 className={`my-4 text-3xl font-bold text-primary ${theme}`}>Todo App</h1>
           
           <Suspense fallback={<div>Loading List...</div>}>
             {todos && todos.completedTodos && todos.uncompletedTodos ? (

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+      /* Todo Page container styles */
+  .todos-page { @apply w-screen h-screen flex justify-between items-start gap-5 px-[10px] bg-white; }
+
+  /* TodoItem styles */
+  .todo-item-row { @apply flex items-center justify-around gap-[15px] py-[5px] border-b border-gray-200 last:border-b-0; }
+  .todo-circle { @apply flex items-center justify-center w-[20px] h-[20px] border-2 border-primary rounded-full text-primary cursor-pointer; }
+  .todo-date { @apply text-xs font-light text-informationColor; }
+  .todo-description { @apply flex-1 text-primary text-left; }
+  .todo-time-spent { @apply flex bg-timerBg rounded-full w-[90px] h-[31px] text-timerText justify-center items-center; }
+
+  /* TodoForm styles */
+  .todo-form { @apply flex items-center gap-2 py-2; }
+  .todo-input { @apply flex-1 border-b border-gray-200 outline-none py-1 text-informationColor; }
+  .add-todo-btn { @apply bg-primary text-white rounded px-4 py-1 hover:bg-opacity-90; }
+
+  /* Completed todos styles */
+  .completed-todos { @apply mt-5; }
+  .completed-table { @apply w-full bg-darkTable text-gray-100 rounded-xl overflow-hidden; }
+}

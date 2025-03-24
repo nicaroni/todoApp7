@@ -62,23 +62,26 @@ const TodoList = ({ todos, dispatch, startPomodoro }) => {
   };
 
   return (
-    <div className="todo-list">
-      <table className="table table-borderless main-todo-table">
+    <div className="todo-list w-full">
+        <table className="w-full border-separate border-spacing-0">
         <thead>
           <tr>
-            <th className="todo-header">Description</th>
+            <th className="text-left pl-[176px] font-bold pb-2 border-b border-gray-200 text-primary">
+              Description
+            </th>
           </tr>
-          
         </thead>
         <tbody>
           {/* Map over uncompleted todos and display them */}
           {uncompletedTodos.map((todo) => (
-            <TodoItem key={todo.todo_id} todo={todo} dispatch={dispatch} startPomodoro={startPomodoro} />
+            <TodoItem key={todo.todo_id}
+             todo={todo}
+              dispatch={dispatch} 
+              startPomodoro={startPomodoro} />
           ))}
 
-          {/* Add the TodoForm as the last row */}
-          <tr className="todo-form-row">
-            <td className="td-input" colSpan="2">
+            <tr>
+            <td className="p-0" colSpan="2">
               <TodoForm dispatch={dispatch} />
             </td>
           </tr>
@@ -86,19 +89,23 @@ const TodoList = ({ todos, dispatch, startPomodoro }) => {
       </table>
 
       {/* Button to toggle the visibility of completed tasks */}
-      <button onClick={toggleCompletedTasks} className="btn btn-secondary m-3">
+      <button onClick={toggleCompletedTasks} className="bg-secondary text-white py-2 px-4 rounded-md m-3 hover:bg-opacity-90">
         {showCompleted ? "Hide Completed Tasks" : "Show Completed Tasks"}
       </button>
 
       {/* Display completed tasks */}
       {showCompleted && completedTodos.length > 0 && (
-        <div className="completed-todos">
-          <h3>Completed Tasks</h3>
-          <table className="table table-dark table-striped">
-            <tbody className="completed-table-body">
-              {/* Map over completed todos and display them */}
-              {completedTodos.map((todo) => (
-                <TodoItem key={todo.todo_id} todo={todo} dispatch={dispatch} />
+        <div className="completed-todos mt-4">
+          <h3 className="text-xl text-white mb-2">Completed Tasks</h3>
+          <table className="w-full bg-darkTable text-gray-100 rounded-xl overflow-hidden">
+          <tbody>
+              {completedTodos.map(todo => (
+                <TodoItem 
+                  key={todo.todo_id} 
+                  todo={todo} 
+                  dispatch={dispatch} 
+                  startPomodoro={startPomodoro} 
+                />
               ))}
             </tbody>
           </table>
@@ -106,7 +113,7 @@ const TodoList = ({ todos, dispatch, startPomodoro }) => {
       )}
 
         {todos.length > 0 && uncompletedTodos.length === 0 && (
-        <div className="congrats-message">100% complete! Take a break, you deserve it! 🍩☕</div>
+        <div className="congrats-message mt-5 text-green-500 font-bold">100% complete! Take a break, you deserve it! 🍩☕</div>
       )}
     </div>
   );
