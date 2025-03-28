@@ -36,17 +36,17 @@ const TodoForm = ({ dispatch }) => {
   
 
   return (
-    <form onSubmit={handleSubmit} className="todo-form">
-      <div className="table-like-row">
-        <div className="circle add-circle">+</div>
+    <form onSubmit={handleSubmit} className="todo-form m-0 p-0 w-full">
+      <div className="table-like-row flex items-center py-2">
+        <div className="circle add-circle mx-[10px] text-primary text-xl cursor-pointer flex items-center justify-center w-6 h-6 border-2 border-primary rounded-full">+</div>
         <input
           type="text"
-          className="form-control todo-input"
+          className="form-control todo-input border-0 border-b border-[#e0e0e0] outline-none px-2 py-1 flex-1 text-information bg-transparent"
           placeholder="Add a new todo..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button className="btn btn-primary squishy add-todo-btn" type="submit">Add</button>
+        <button className="btn btn-primary squishy add-todo-btn ml-4 px-4 py-2 bg-primary text-white font-medium rounded-lg hover:brightness-110 transition" type="submit">Add</button>
       </div>
     </form>
   );

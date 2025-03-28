@@ -1,3 +1,4 @@
+import './App.css';
 import { useState } from 'react'
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -7,12 +8,14 @@ import TodoPage from './containers/TodoPage.jsx';
 import ThemePage from './containers/ThemePage.jsx';
 import HomePage from './containers/HomePage.jsx';
 
-import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
+    <div className="h-screen flex items-center justify-center bg-primary text-white text-3xl font-bold">
+    ✅ Tailwind is working!
+
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Routes>
         <Route path="/signup" element={<SignUpPage />} />
@@ -20,9 +23,10 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/todos" element={<TodoPage />} />
         <Route path="/theme" element={<ThemePage />} />
-
+        <Route path="*" element={<div className="p-4 text-red-500">404 - Page Not Found</div>} />
       </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
+  </div>
   )
 }
 

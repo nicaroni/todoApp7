@@ -91,7 +91,8 @@ const TodoPage = () => {
     <Calendar  />
         </div>
   
-         
+        <div className="bg-red-500 text-white p-4">
+ If you see a red background, Tailwind is working ✅</div>
         <div className={`container todo-table w-[900px] h-[700px] ${theme} `}>
          
           <NavBar />

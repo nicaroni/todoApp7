@@ -1,6 +1,6 @@
 import React from "react";
 import {Link, useLocation} from 'react-router-dom';
-import '../assets/styles/navBar.scss';
+
 
 const Navbar = () => {
     console.log("Navbar is rendering!"); 

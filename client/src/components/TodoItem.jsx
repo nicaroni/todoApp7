@@ -122,7 +122,7 @@ const TodoItem = ({ todo, dispatch, startPomodoro }) => {
   
 
   return (
-    <tr className={`todo-item-row ${isCompleted ? 'completed' : ''}`}>
+    <tr className={`todo-item-row flex items-center justify-around py-[5px] border-b border-[#e0e0e0] gap-[15px] ${isCompleted ? 'completed' : ''}`}>
       <td className="circle" onClick={handleComplete}  onMouseEnter={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
           setHoveredEvent(true);
@@ -153,16 +153,16 @@ const TodoItem = ({ todo, dispatch, startPomodoro }) => {
         )}
       </td> 
       <td className="todo-time-spent">
-        <div className="emoji-timer">
+        <div className="emoji-timer text-sm">
         ⏳
         </div>
-        <div className="time-spent-text">
+        <div className="time-spent-text text-[11px] font-bold ml-1">
         {todo.time_spent || 0} min
         </div>
   
       </td>
 
-      <td className="delete-btn-cell">
+      <td className="delete-btn-cell shrink-0">
         <button className="delete-btn" onClick={handleDelete}>
           Delete
         </button>
